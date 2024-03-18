@@ -13,7 +13,7 @@ If reference counter is negative, it panics.
 ```
 import "github.com/ryanking8215/sharedbuffer"
 
-sb := shared_buffer.New(1000, 2, func(sb *sharedbuffer.Buffer){
+sb := shared_buffer.New(make([]byte, 1000), 2, func(sb *sharedbuffer.Buffer){
 	// done callback
 })
 // after consumer1 consumes the buffer.

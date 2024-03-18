@@ -12,13 +12,13 @@ type Buffer struct {
 	done DoneFunc
 }
 
-func New(size int, rc int32, done DoneFunc) *Buffer {
+func New(b []byte, rc int32, done DoneFunc) *Buffer {
 	if rc < 0 {
 		panic(negativeRC)
 	}
 
 	return &Buffer{
-		b:    make([]byte, size),
+		b:    b,
 		rc:   rc,
 		done: done,
 	}

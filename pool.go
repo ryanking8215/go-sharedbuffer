@@ -9,7 +9,7 @@ type Pool struct {
 func NewPool(bufSize int) *Pool {
 	p := Pool{}
 	p.Pool.New = func() interface{} {
-		return New(bufSize, 0, p.put)
+		return New(make([]byte, bufSize), 0, p.put)
 	}
 	return &p
 }

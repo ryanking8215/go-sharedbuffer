@@ -8,7 +8,7 @@ import (
 
 func Test_Buffer(t *testing.T) {
 	var done bool
-	sb := New(10, 2, func(*Buffer) {
+	sb := New(make([]byte, 10), 2, func(*Buffer) {
 		done = true
 	})
 	assert.Len(t, sb.Bytes(), 10)
